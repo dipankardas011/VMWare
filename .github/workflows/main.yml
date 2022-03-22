@@ -23,8 +23,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+
       # Runs a single command using the runners shell
+
+      - uses: actions/checkout@v2
+
       - name: Run a one-line script
         run: echo "Lets check"
       - name: Datree CLI
@@ -34,3 +37,13 @@ jobs:
         with:
           # the file/s to be tested
           path: src/*
+
+      - name: Build the Docker image
+          uses: actions/checkout@v2
+          env:
+            SUPER_SECRET: ${{ secrets.DOCKER_PASS }}
+          run: |
+            docker login -u dipugodocker -p "$SUPER_SECRET"
+            docker build . --file Dockerfile --tag dipugodocker/vmware-sol:latest
+            docker run dipugodocker/vmware-sol:latest
+            docker push dipugodocker/vmware-sol:latest
