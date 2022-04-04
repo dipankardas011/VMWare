@@ -1,4 +1,5 @@
 # Vertical Auto-Scaling using K8s
+[![CI](https://github.com/dipankardas011/VMWare/actions/workflows/main.yml/badge.svg)](https://github.com/dipankardas011/VMWare/actions/workflows/main.yml)
 
 ## Group members
 1. Dipankar Das  `Kalinga Institute Industrial Technology`
