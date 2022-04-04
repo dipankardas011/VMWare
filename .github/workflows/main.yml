@@ -46,5 +46,6 @@ jobs:
           cd src/
           docker login -u dipugodocker -p "$SUPER_SECRET"
           docker build . --file Dockerfile --tag dipugodocker/vmware-sol:latest
-          docker run dipugodocker/vmware-sol:latest
           docker push dipugodocker/vmware-sol:latest
+# removing it because it will get load test
+# docker run dipugodocker/vmware-sol:latest
