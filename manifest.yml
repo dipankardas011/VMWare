@@ -1,0 +1,52 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-big-data-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-big-data-app
+  template:
+    metadata:
+      labels:
+        app: my-big-data-app
+    spec:
+      containers:
+        - name: big-data-server
+          image: dipugodocker/vmware-sol:latest
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "50Mi"
+              cpu: "500m"
+            limits:
+              memory: "500Mi"
+              cpu: "1500m"
+---
+
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: my-big-data-vpa
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: Deployment
+    name: my-big-data-app
+  # resourcePolicy:
+  #   containerPolicies:
+  #     - containerName: big-data-server
+  #       controlledResources:
+  #         - cpu
+  #         - memory
+  #       maxAllowed:
+  #         cpu: 1
+  #         memory: 800Mi
+  #       minAllowed:
+  #         cpu: 100m
+  #         memory: 50Mi
+  updatePolicy:
+    updateMode: "Off"
+...
