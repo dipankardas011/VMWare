@@ -28,7 +28,7 @@ jobs:
       # uses: datreeio/action-datree@3587b81449982c327052ca0f9dfcd6983194ed2e
       uses: datreeio/action-datree@main
       with:
-        path: 'src/manifest.yml'
+        path: 'VPA/manifest.yml'
         cliArguments: '--only-k8s-files'
 
   build:
