@@ -35,8 +35,17 @@ kubectl get vpa
 kubectl describe vpa <Name>
 ```
 
-![](./01.png)
-![](./02.png)
-![](./03.png)
-![](./04.png)
-![](./05.png)
+## VPA installation
+<img src="./01.png" width="80%" height=auto>
+
+## Recommendation provided by the autoscaler
+<img src="./02.png" width="80%" height=auto>
+
+## Current State of VPA and POD
+<img src="./03.png" width="80%" height=auto>
+
+## Metric for CPU util.
+<img src="./04.png" width="80%" height=auto>
+
+<!-- ## Recommendation provided by the autoscaler
+<img src="./05.png" width="80%" height=auto> -->
