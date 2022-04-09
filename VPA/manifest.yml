@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: my-big-data-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: my-big-data-app
@@ -18,10 +18,13 @@ spec:
           image: dipugodocker/vmware-sol:latest
           imagePullPolicy: Always
           resources:
-            requests:
-              memory: "50Mi"
-              cpu: "500m"
+            # requests:
+              # memory: "50Mi"
+              # cpu: "500m"
             limits:
               memory: "500Mi"
-              cpu: "1500m"
+              cpu: "1"
+          ports:
+            - name: for-web
+              containerPort: 8080
 ...

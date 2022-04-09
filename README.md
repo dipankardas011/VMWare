@@ -8,8 +8,11 @@
 
 1. Go
 2. Simple csv file for the load
-3. Azure k8s cluster
-4. Docker
+3. Docker
+
+## References
+1. Kuberenetes/AutoScaler
+2. Charts [Charts](https://blog.logrocket.com/visualizing-data-go-echarts/)
 
 ## How to Run
 

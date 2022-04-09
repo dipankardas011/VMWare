@@ -7,18 +7,18 @@ spec:
     apiVersion: "apps/v1"
     kind: Deployment
     name: my-big-data-app
-  # resourcePolicy:
-  #   containerPolicies:
-  #     - containerName: big-data-server
-  #       controlledResources:
-  #         - cpu
-  #         - memory
-  #       maxAllowed:
-  #         cpu: 1
-  #         memory: 800Mi
-  #       minAllowed:
-  #         cpu: 100m
-  #         memory: 50Mi
+  resourcePolicy:
+    containerPolicies:
+      - containerName: big-data-server
+        controlledResources:
+          - cpu
+          - memory
+        maxAllowed:
+          cpu: 1500m
+          memory: 800Mi
+        minAllowed:
+          cpu: 100m
+          memory: 50Mi
   updatePolicy:
     updateMode: "Off"
 ...

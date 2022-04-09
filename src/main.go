@@ -20,20 +20,23 @@ func welcome(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	i := 0
 	// 0 for 1
-	for i < 1 {
+	for i := 0; i < 10000000; i++ {
 		data, err := os.Open("adult.csv")
 		if err != nil {
 			log.Fatal(err)
 		}
 		df := dataframe.ReadCSV(data)
 		fmt.Printf("Dataset[%v]: %v\n", i, df)
-		fmt.Println("Attributes: ", df.Names())
-		AgeUtility(df)
-		EmployeeUtility(df)
-		i++
 	}
+	data, err := os.Open("adult.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+	df := dataframe.ReadCSV(data)
+	fmt.Println("Attributes: ", df.Names())
+	AgeUtility(df)
+	EmployeeUtility(df)
 	http.HandleFunc("/pie", html)
 	http.HandleFunc("/", welcome)
 	http.ListenAndServe(":8080", nil)
