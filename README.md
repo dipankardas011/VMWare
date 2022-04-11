@@ -14,8 +14,8 @@
 [*`Youtube Video Link`*](https://youtu.be/szN6RZKE51I)
 
 ## References
-1. VPA [Kubernetes autoscaler](https://github.com/kubernetes/autoscaler) and some of the [Google docs]()
-2. Bigdata package for go[BigData](https://github.com/go-gota/gota/dataframe)
+1. VPA [Kubernetes autoscaler](https://github.com/kubernetes/autoscaler) and some of the [Google docs](https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler)
+2. Bigdata package for go[BigData](https://github.com/go-gota/gota/)
 3. Charts for go[Charts](https://blog.logrocket.com/visualizing-data-go-echarts/)
 4. Big data from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)
 
